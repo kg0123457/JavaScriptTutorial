@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Confirm New Entry</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<% for (var i = 0; i < posts.length; i++) { %>
+	<form action="http://localhost:3000/update" method="POST">
+		<input class="form-control" name="id" value="<%=posts[i]._id%>">
+		<input class="form-control" name="teacher" value="<%=posts[i].teacher%>">
+		<input class="form-control" name="subject" value="<%=posts[i].subject%>">
+		<input class="form-control" name="date" value="<%=posts[i].created%>">
+		<input class="form-control" name="topic" value="<%=posts[i].topic%>">
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+<% } %>
+
+<body>
+</body>
+</html>
