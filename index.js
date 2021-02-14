@@ -70,7 +70,7 @@ app.post('/update', (req, res) => {
 	var subject = String(req.body.subject);
 	var date = String(req.body.date);
 	var topic = String(req.body.topic);
-	const connector = mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true });
+	const connector = mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
 	Entry.findByIdAndUpdate({'_id':id}, { $set: { confirmed: 1 }}, function(err, results) {
 		if (!err) {
 			res.send(results);
